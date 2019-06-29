@@ -1,18 +1,16 @@
 buildscript {
-    
 
     repositories {
         mavenLocal()
         mavenCentral()
-        maven { url "https://plugins.gradle.org/m2/" }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         jcenter()
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.google.gms:google-services:3.1.1'
         classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.3.6'
-        
 
     }
 }
@@ -23,8 +21,9 @@ allprojects {
 
     version = '1.0'
     ext {
-        appName = "Skel Game"
-        gdxVersion = '1.9.9'
+        appName = "my-gdx-game"
+        gdxVersion = '1.9.8'
+        robopodsVersion = '2.2.2'
         roboVMVersion = '2.3.6'
         box2DLightsVersion = '1.4'
         ashleyVersion = '1.7.0'
@@ -34,35 +33,59 @@ allprojects {
     repositories {
         mavenLocal()
         mavenCentral()
-        jcenter()
-        google()
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
         maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+        google()
+        jcenter()
     }
 }
 
 project(":android") {
     apply plugin: "android"
 
-    configurations { natives }
-
+    configurations {
+        natives
+        all {
+            exclude group: 'org.json', module: 'json'
+        }
+    }
     dependencies {
         compile project(":core")
+        compile 'com.anjlab.android.iab.v3:library:1.0.44'
+
+        implementation 'com.android.support:appcompat-v7:26.1.0'
+        //Facebook
+        compile 'com.facebook.android:facebook-android-sdk:4.29.0'
+        //LibGDX
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
-        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-armeabi-v7a"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-arm64-v8a"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86"
         natives "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-x86_64"
-        
+        //Firebase
+        compile 'com.google.firebase:firebase-core:11.8.0'
+        compile 'com.google.firebase:firebase-auth:11.8.0'
+        compile 'com.google.firebase:firebase-database:11.8.0'
+
+        compile 'com.google.android.gms:play-services-ads:11.8.0'
+        compile 'com.google.android.gms:play-services-auth:11.8.0'
+
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'org.mockito:mockito-android:2.7.15'
+        androidTestImplementation 'com.android.support.test:runner:1.0.1'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+        annotationProcessor "com.google.auto.value:auto-value:1.2"
+
     }
 }
+
 
 project(":ios") {
     apply plugin: "java"
@@ -73,10 +96,16 @@ project(":ios") {
         compile project(":core")
         compile "com.mobidevelop.robovm:robovm-rt:$roboVMVersion"
         compile "com.mobidevelop.robovm:robovm-cocoatouch:$roboVMVersion"
+        compile "com.mobidevelop.robovm:robopods-google-mobile-ads-ios:$robopodsVersion"
         compile "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-ios"
-        compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-ios"
-        
+    }
+
+    robovm {
+        iosSignIdentity = "Horea Bucerzan"
+        iosProvisioningProfile = "lettersGameDistribution"
+        iosSkipSigning = false
+        archs = "thumbv7:arm64"
     }
 }
 
@@ -86,8 +115,9 @@ project(":core") {
 
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
-        
+        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+        compile group: 'org.json', name: 'json', version: '20090211'
+        compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
     }
 }
 
