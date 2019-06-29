@@ -1,46 +1,42 @@
-package com.habapps.skelgame;
+package com.habapps.service;
 
 
-import com.habapps.IOSLauncher;
+import com.habapps.AndroidLauncher;
+import com.habapps.R;
 
 import libgdx.game.external.AppInfoService;
 
-public class LettersGameAppInfoServiceImpl implements AppInfoService {
+public class SkelGameAppInfoServiceImpl implements AppInfoService {
 
-    private IOSLauncher iosLauncher;
+    private AndroidLauncher activity;
 
-    public LettersGameAppInfoServiceImpl(IOSLauncher iosLauncher) {
-        this.iosLauncher = iosLauncher;
+    public SkelGameAppInfoServiceImpl(AndroidLauncher activity) {
+        this.activity = activity;
     }
 
     @Override
     public String getGameIdPrefix() {
-        return iosLauncher.getGameProperties().getGameIdEnum().name();
+        return activity.getResources().getString(R.string.game_id);
     }
 
     @Override
-    public boolean isProVersion() {
-        return false;
-    }
-
-    @Override
-    public String proVersionStoreAppId() {
-        return null;
+    public float gameScreenTopMargin() {
+        return 0;
     }
 
     @Override
     public String getAppName() {
-        return iosLauncher.getGameProperties().getAppName();
+        return activity.getResources().getString(R.string.app_name);
     }
 
     @Override
     public String getStoreAppId() {
-        return iosLauncher.getGameProperties().getStoreAppId();
+        return activity.getPackageName();
     }
 
     @Override
     public void showPopupAd() {
-        iosLauncher.showPopupAd();
+        activity.showPopupAd();
     }
 
     @Override
@@ -50,7 +46,7 @@ public class LettersGameAppInfoServiceImpl implements AppInfoService {
 
     @Override
     public String getLanguage() {
-        return iosLauncher.getGameProperties().getLanguage();
+        return activity.getResources().getString(R.string.language);
     }
 
     @Override
@@ -60,7 +56,7 @@ public class LettersGameAppInfoServiceImpl implements AppInfoService {
 
     @Override
     public boolean googleFacebookLoginEnabled() {
-        return false;
+        return activity.getResources().getBoolean(R.bool.google_facebook_login_enabled);
     }
 
     @Override
@@ -79,10 +75,12 @@ public class LettersGameAppInfoServiceImpl implements AppInfoService {
     }
 
     @Override
-    public float gameScreenTopMargin() {
-        if (screenShotMode()) {
-            return 0;
-        }
-        return iosLauncher.getSafeAreaInsets() + iosLauncher.getBannerAdHeight();
+    public String proVersionStoreAppId() {
+        return null;
+    }
+
+    @Override
+    public boolean isProVersion() {
+        return false;
     }
 }

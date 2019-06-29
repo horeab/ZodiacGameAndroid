@@ -17,10 +17,9 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.habapps.service.LettersAppInfoServiceImpl;
+import com.habapps.service.SkelGameAppInfoServiceImpl;
 
 import libgdx.game.Game;
-import libgdx.game.LettersGame;
 import libgdx.utils.startgame.test.DefaultBillingService;
 import libgdx.utils.startgame.test.DefaultFacebookService;
 
@@ -28,7 +27,7 @@ public class AndroidLauncher extends AndroidApplication {
 
     public static final int ID_AD_BANNER = 1111;
 
-    private LettersAppInfoServiceImpl appInfoService;
+    private SkelGameAppInfoServiceImpl appInfoService;
 
     private InterstitialAd interstitialAd;
 
@@ -54,7 +53,7 @@ public class AndroidLauncher extends AndroidApplication {
 
     private void initServices() {
         handler = new Handler(getMainLooper());
-        appInfoService = new LettersAppInfoServiceImpl(this);
+        appInfoService = new SkelGameAppInfoServiceImpl(this);
     }
 
     private void initAds(AdView bannerAdview) {
@@ -73,7 +72,7 @@ public class AndroidLauncher extends AndroidApplication {
 
     private View createGameView() {
         return initializeForView(
-                new LettersGame(
+                new SkelGame(
                         new DefaultFacebookService(),
                         new DefaultBillingService(),
                         appInfoService),

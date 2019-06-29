@@ -4,8 +4,8 @@ import libgdx.constants.GameIdEnum;
 
 public enum GameProperties {
 
-    lettersgame_ro(
-            GameIdEnum.lettersgame,
+    skelgame(
+            GameIdEnum.skelgame,
             "ro",
             "Jocul Cuvintelor",
             "appId",

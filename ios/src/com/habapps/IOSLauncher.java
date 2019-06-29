@@ -2,7 +2,7 @@ package com.habapps;
 
 import com.badlogic.gdx.backends.iosrobovm.IOSApplication;
 import com.badlogic.gdx.backends.iosrobovm.IOSApplicationConfiguration;
-import com.habapps.skelgame.LettersGameAppInfoServiceImpl;
+import com.habapps.skelgame.SkelGameAppInfoServiceImpl;
 
 import org.robovm.apple.coregraphics.CGRect;
 import org.robovm.apple.foundation.Foundation;
@@ -20,7 +20,6 @@ import org.robovm.pods.google.mobileads.GADInterstitialDelegateAdapter;
 import org.robovm.pods.google.mobileads.GADRequest;
 import org.robovm.pods.google.mobileads.GADRequestError;
 
-import libgdx.game.LettersGame;
 import libgdx.utils.startgame.test.DefaultBillingService;
 import libgdx.utils.startgame.test.DefaultFacebookService;
 
@@ -29,23 +28,23 @@ public class IOSLauncher extends IOSApplication.Delegate {
 
     private boolean adsInitialized = false;
 
-    private GameProperties gameProperties = GameProperties.lettersgame_ro;
+    private GameProperties gameProperties = GameProperties.skelgame;
 
     private GADBannerView bannerAdview;
     private GADInterstitial interstitialAd;
 
     private IOSApplication iosApplication;
 
-    private LettersGameAppInfoServiceImpl appInfoService;
+    private SkelGameAppInfoServiceImpl appInfoService;
 
     @Override
     protected IOSApplication createApplication() {
         final IOSApplicationConfiguration config = new IOSApplicationConfiguration();
         config.orientationLandscape = false;
         config.orientationPortrait = true;
-        appInfoService = new LettersGameAppInfoServiceImpl(this);
+        appInfoService = new SkelGameAppInfoServiceImpl(this);
         iosApplication = new IOSApplication(
-                new LettersGame(
+                new SkelGame(
                         new DefaultFacebookService(),
                         new DefaultBillingService(),
                         appInfoService),
