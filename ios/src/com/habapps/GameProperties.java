@@ -1,12 +1,14 @@
 package com.habapps;
 
+import org.robovm.apple.foundation.NSBundle;
+
 import libgdx.constants.GameIdEnum;
 
 public enum GameProperties {
 
     skelgame(
             GameIdEnum.skelgame,
-            "ro",
+            NSBundle.getMainBundle().getLocalizedString("language","en","InfoPlist"),
             "Jocul Cuvintelor",
             "appId",
             "bannerId",
