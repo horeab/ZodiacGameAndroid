@@ -12,6 +12,10 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
     public SkelGameAppInfoServiceImpl(IOSLauncher iosLauncher) {
         this.iosLauncher = iosLauncher;
     }
+    @Override
+    public boolean isPortraitMode() {
+        return true;
+    }
 
     @Override
     public String getGameIdPrefix() {
