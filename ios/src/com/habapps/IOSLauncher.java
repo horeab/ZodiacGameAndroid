@@ -40,9 +40,9 @@ public class IOSLauncher extends IOSApplication.Delegate {
     @Override
     protected IOSApplication createApplication() {
         final IOSApplicationConfiguration config = new IOSApplicationConfiguration();
-        config.orientationLandscape = false;
-        config.orientationPortrait = true;
         appInfoService = new SkelGameAppInfoServiceImpl(this);
+        config.orientationLandscape = !appInfoService.isPortraitMode();
+        config.orientationPortrait = appInfoService.isPortraitMode();
         iosApplication = new IOSApplication(
                 new SkelGame(
                         new DefaultFacebookService(),
