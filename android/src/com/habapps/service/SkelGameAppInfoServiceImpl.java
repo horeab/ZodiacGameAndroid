@@ -20,6 +20,10 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
     }
 
     @Override
+    public boolean isPortraitMode() {
+        return true;
+    }
+    @Override
     public float gameScreenTopMargin() {
         return 0;
     }
