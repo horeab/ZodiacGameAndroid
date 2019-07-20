@@ -48,7 +48,10 @@ public class AndroidLauncher extends AndroidApplication {
         allScreenView.addView(bannerAdview, adParams);
         allScreenView.addView(createGameView());
         setContentView(allScreenView);
-        initAds(bannerAdview);
+
+        if (!appInfoService.isProVersion()) {
+            initAds(bannerAdview);
+        }
     }
 
     private void initServices() {
@@ -89,20 +92,22 @@ public class AndroidLauncher extends AndroidApplication {
 
 
     public void showPopupAd() {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                if (interstitialAd.isLoaded()) {
-                    interstitialAd.show();
-                    interstitialAd.setAdListener(new AdListener() {
-                        @Override
-                        public void onAdClosed() {
-                            interstitialAd.loadAd(new AdRequest.Builder().build());
-                        }
-                    });
+        if (!appInfoService.isProVersion()) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if (interstitialAd.isLoaded()) {
+                        interstitialAd.show();
+                        interstitialAd.setAdListener(new AdListener() {
+                            @Override
+                            public void onAdClosed() {
+                                interstitialAd.loadAd(new AdRequest.Builder().build());
+                            }
+                        });
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
 
