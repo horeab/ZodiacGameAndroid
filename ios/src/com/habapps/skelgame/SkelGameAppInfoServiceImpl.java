@@ -17,6 +17,12 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
         return true;
     }
 
+
+    @Override
+    public String getProVersionStoreAppId() {
+        return null;
+    }
+
     @Override
     public String getGameIdPrefix() {
         return iosLauncher.getGameProperties().getGameIdEnum().name();
@@ -84,7 +90,7 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
 
     @Override
     public float gameScreenTopMargin() {
-        if (screenShotMode()) {
+        if (screenShotMode() || isProVersion()) {
             return 0;
         }
         return iosLauncher.getSafeAreaInsets() + iosLauncher.getBannerAdHeight();
