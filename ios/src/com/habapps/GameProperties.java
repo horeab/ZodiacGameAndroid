@@ -14,7 +14,8 @@ public enum GameProperties {
             "bannerId",
             "interId",
             "rewardId",
-            "iosAppstoreId");
+            "iosAppstoreId",
+            "proVersionStoreAppId");
 
     private GameIdEnum gameIdEnum;
     private String language;
@@ -24,6 +25,7 @@ public enum GameProperties {
     private String interstitialAdId;
     private String rewardAdId;
     private String storeAppId;
+    private String proVersionStoreAppId;
 
     GameProperties(GameIdEnum gameIdEnum,
                    String language,
@@ -32,7 +34,8 @@ public enum GameProperties {
                    String bannerAdId,
                    String interstitialAdId,
                    String rewardAdId,
-                   String storeAppId) {
+                   String storeAppId,
+                   String proVersionStoreAppId) {
         this.gameIdEnum = gameIdEnum;
         this.language = language;
         this.appName = appName;
@@ -41,6 +44,7 @@ public enum GameProperties {
         this.interstitialAdId = interstitialAdId;
         this.rewardAdId = rewardAdId;
         this.storeAppId = storeAppId;
+        this.proVersionStoreAppId = proVersionStoreAppId;
     }
 
     public GameIdEnum getGameIdEnum() {
@@ -73,5 +77,9 @@ public enum GameProperties {
 
     public String getStoreAppId() {
         return storeAppId;
+    }
+
+    public String getProVersionStoreAppId() {
+        return proVersionStoreAppId;
     }
 }

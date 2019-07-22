@@ -34,11 +34,6 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
     }
 
     @Override
-    public String proVersionStoreAppId() {
-        return null;
-    }
-
-    @Override
     public String getAppName() {
         return iosLauncher.getGameProperties().getAppName();
     }
