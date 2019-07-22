@@ -9,7 +9,7 @@ public enum GameProperties {
     skelgame(
             GameIdEnum.skelgame,
             NSBundle.getMainBundle().getLocalizedString("language","en","InfoPlist"),
-            "Jocul Cuvintelor",
+            NSBundle.getMainBundle().getLocalizedString("CFBundleDisplayName","en","InfoPlist"),
             "appId",
             "bannerId",
             "interId",
