@@ -1,0 +1,185 @@
+{
+  "project_info": {
+    "project_number": "845246532083",
+    "firebase_url": "https://iqtest-d0670.firebaseio.com",
+    "project_id": "iqtest-d0670",
+    "storage_bucket": "iqtest-d0670.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845246532083:android:16577d07a42854f9",
+        "android_client_info": {
+          "package_name": "com.habapps.iqtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCes1iJVwmmYsQKHuQgDzvW73DGGbp_S8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845246532083:android:6223a1268f93d087",
+        "android_client_info": {
+          "package_name": "com.habapps.iqtestPro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCes1iJVwmmYsQKHuQgDzvW73DGGbp_S8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845246532083:android:f071a3acce1e0bf6",
+        "android_client_info": {
+          "package_name": "com.habapps.perstest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCes1iJVwmmYsQKHuQgDzvW73DGGbp_S8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845246532083:android:ffafb367dfe912a32d6a86",
+        "android_client_info": {
+          "package_name": "com.habapps.perstestPro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCes1iJVwmmYsQKHuQgDzvW73DGGbp_S8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845246532083:android:97baecf5461e873c2d6a86",
+        "android_client_info": {
+          "package_name": "com.habapps.zodiac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCes1iJVwmmYsQKHuQgDzvW73DGGbp_S8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845246532083:android:5b3cbb4695585aca2d6a86",
+        "android_client_info": {
+          "package_name": "com.habapps.zodiacpro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCes1iJVwmmYsQKHuQgDzvW73DGGbp_S8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "845246532083-vhdurl85ar862gn27th4td2iamitptl0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

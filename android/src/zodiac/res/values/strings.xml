@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Horoscope Compatibility</string>
+    <string name="language">en</string>
+    <string name="game_id">zodiac</string>
+
+    <string name="admob_banner_id">ca-app-pub-9432399956064043/7447013519</string>
+    <string name="admob_inter_id">ca-app-pub-9432399956064043/2194686834</string>
+    <string name="admob_video_id">ca-app-pub-9432399956064043/5942360157</string>
+    <string name="admob_app_id">ca-app-pub-9432399956064043~3699340193</string>
+
+    <bool name="google_facebook_login_enabled">false</bool>
+</resources>

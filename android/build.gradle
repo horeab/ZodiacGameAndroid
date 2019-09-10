@@ -11,8 +11,11 @@ android {
             res.srcDirs = ['res']
             jniLibs.srcDirs = ['libs']
         }
-        skelgame {
-            assets.srcDirs = ['assets/tournament_resources/implementations/skelgame', 'assets/tournament_resources/main', 'assets/main_resources/main']
+        zodiac {
+            assets.srcDirs = ['assets/tournament_resources/implementations/zodiac', 'assets/tournament_resources/main', 'assets/main_resources/main']
+        }
+        zodiacPro {
+            assets.srcDirs = ['assets/tournament_resources/implementations/zodiac', 'assets/tournament_resources/main', 'assets/main_resources/main']
         }
     }
     lintOptions {
@@ -51,12 +54,20 @@ android {
     flavorDimensions "game"
     productFlavors {
 /////////////////////////////////////////////////////////////////////////////
-        skelgame {
-            applicationIdSuffix ".skelgame"
+        zodiac {
+            applicationIdSuffix ".zodiac"
             versionCode 1
             versionName "1.00"
             dimension "game"
-            manifestPlaceholders = [appIcon: "@drawable/skelgame_icon"]
+            manifestPlaceholders = [appIcon: "@drawable/zodiac_icon"]
+        }
+/////////////////////////////////////////////////////////////////////////////
+        zodiacPro {
+            applicationIdSuffix ".zodiacpro"
+            versionCode 1
+            versionName "1.00"
+            dimension "game"
+            manifestPlaceholders = [appIcon: "@drawable/zodiacpro_icon"]
         }
 /////////////////////////////////////////////////////////////////////////////
     }
