@@ -21,7 +21,7 @@
       <skipPngCrush>true</skipPngCrush>
     </resource>
     <resource>
-      <directory>../android/assets/tournament_resources/implementations/skelgame</directory>
+      <directory>../android/assets/tournament_resources/implementations/zodiac</directory>
       <includes>
         <include>**</include>
       </includes>

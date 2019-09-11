@@ -39,8 +39,8 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
     }
 
     @Override
-    public void showPopupAd() {
-        activity.showPopupAd();
+    public void showPopupAd(Runnable afterClose) {
+        activity.showPopupAd(afterClose);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
     }
 
     @Override
-    public boolean screenShotMode() {
+    public boolean isScreenShotMode() {
         return false;
     }
 
@@ -79,7 +79,7 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
     }
 
     @Override
-    public String proVersionStoreAppId() {
+    public String getProVersionStoreAppId() {
         return null;
     }
 
@@ -87,4 +87,5 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
     public boolean isProVersion() {
         return false;
     }
+
 }

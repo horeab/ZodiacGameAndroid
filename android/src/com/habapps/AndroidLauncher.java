@@ -92,7 +92,7 @@ public class AndroidLauncher extends AndroidApplication {
     }
 
 
-    public void showPopupAd() {
+    public void showPopupAd(final Runnable afterClose) {
         if (!appInfoService.isProVersion()) {
             runOnUiThread(new Runnable() {
                 @Override
@@ -102,14 +102,18 @@ public class AndroidLauncher extends AndroidApplication {
                         interstitialAd.setAdListener(new AdListener() {
                             @Override
                             public void onAdClosed() {
+                                afterClose.run();
                                 interstitialAd.loadAd(new AdRequest.Builder().build());
                             }
                         });
+                    } else {
+                        afterClose.run();
                     }
                 }
             });
+        } else {
+            afterClose.run();
         }
     }
-
 
 }

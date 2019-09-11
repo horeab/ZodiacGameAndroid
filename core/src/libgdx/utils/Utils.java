@@ -51,7 +51,7 @@ public class Utils {
         return action;
     }
 
-    public static void fadeInActor(Actor actor, float duration){
+    public static void fadeInActor(final Actor actor, float duration){
         actor.addAction(Actions.sequence(Actions.fadeOut(0f), Utils.createRunnableAction(new Runnable() {
             @Override
             public void run() {
@@ -173,8 +173,8 @@ public class Utils {
             }
 
             @Override
-            public void showPopupAd() {
-                currentAppInfoService.showPopupAd();
+            public void showPopupAd(Runnable afterClose) {
+                currentAppInfoService.showPopupAd(afterClose);
             }
 
             @Override

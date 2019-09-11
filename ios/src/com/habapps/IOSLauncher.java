@@ -20,6 +20,7 @@ import org.robovm.pods.google.mobileads.GADInterstitialDelegateAdapter;
 import org.robovm.pods.google.mobileads.GADRequest;
 import org.robovm.pods.google.mobileads.GADRequestError;
 
+import libgdx.implementations.skelgame.SkelGame;
 import libgdx.utils.startgame.test.DefaultBillingService;
 import libgdx.utils.startgame.test.DefaultFacebookService;
 
@@ -74,7 +75,7 @@ public class IOSLauncher extends IOSApplication.Delegate {
     public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
         boolean finishLaunching = super.didFinishLaunching(application, launchOptions);
 
-        if (!appInfoService.screenShotMode() && !appInfoService.isProVersion()) {
+        if (!appInfoService.isScreenShotMode() && !appInfoService.isProVersion()) {
             initializeAds(iosApplication);
         }
         return finishLaunching;
@@ -138,14 +139,15 @@ public class IOSLauncher extends IOSApplication.Delegate {
         return interstitialAd;
     }
 
-    public void showPopupAd() {
-        if (!appInfoService.screenShotMode() && !appInfoService.isProVersion()) {
+    public void showPopupAd(Runnable afterClose) {
+        if (!appInfoService.isScreenShotMode() && !appInfoService.isProVersion()) {
             if (interstitialAd.isReady()) {
                 interstitialAd.present(UIApplication.getSharedApplication().getKeyWindow().getRootViewController());
             } else {
                 interstitialAd.loadRequest(createRequest());
             }
         }
+        afterClose.run();
     }
 
     private GADRequest createRequest() {

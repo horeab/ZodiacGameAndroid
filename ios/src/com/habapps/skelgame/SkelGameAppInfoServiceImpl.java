@@ -44,8 +44,8 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
     }
 
     @Override
-    public void showPopupAd() {
-        iosLauncher.showPopupAd();
+    public void showPopupAd(Runnable afterClose) {
+        iosLauncher.showPopupAd(afterClose);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
     }
 
     @Override
-    public boolean screenShotMode() {
+    public boolean isScreenShotMode() {
         return false;
     }
 
@@ -85,7 +85,7 @@ public class SkelGameAppInfoServiceImpl implements AppInfoService {
 
     @Override
     public float gameScreenTopMargin() {
-        if (screenShotMode() || isProVersion()) {
+        if (isScreenShotMode() || isProVersion()) {
             return 0;
         }
         return iosLauncher.getSafeAreaInsets() + iosLauncher.getBannerAdHeight();
